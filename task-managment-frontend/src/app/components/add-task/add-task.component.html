@@ -1,0 +1,55 @@
+<section>
+    <form [formGroup]="newTaskForm">
+        <div class="row">
+           
+            <div class="mb-3 col-6">
+                <label for="title1" class="form-label">Title</label>
+                <input formControlName="title" type="text" class="form-control" id="title1" required>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="status1" class="form-label">Status</label>
+                <select formControlName="status" class="form-select" id="status1" required>
+                    <option selected>ASSIGNED</option>
+                    <option selected>SEEN</option>
+                    <option selected>IN_PROGRESS</option>
+                    <option selected>FINISHED</option>
+                    
+                </select>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="startDate1" class="form-label">StartDate</label>
+                <input formControlName="startDate" type="date" class="form-control" id="startDate1" required>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="endDate1" class="form-label">EndDate</label>
+                <input formControlName="endDate" type="date" class="form-control" id="endDate1" required>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="assignee1" class="form-label">Assignee</label>
+                <select formControlName="assignee" class="form-select" id="assignee1" required>
+                    <option *ngFor="let asignee of assignees, let i= index" [value]="i">{{asignee.firstname + " " + asignee.lastname}}</option>
+                </select>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="priority1" class="form-label">Priority</label>
+                <select formControlName="priority" class="form-select" id="priority1" required>
+                    <option selected value="HIGH">High</option>
+                    <option selected value="LOW">Low</option>
+                    <option selected value="NORMAL">Normal</option>
+                </select>
+            </div>
+            <div class="mb-3 col-12">
+                <label for="floatingTextarea">Descraption</label>
+                <div class="form-floating">
+                    <textarea formControlName="description" class="form-control" rows="10" id="floatingTextarea"
+                        required></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="sub" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary" (click)="createTask()"
+                >Submit</button>
+        </div>
+    </form>
+</section>

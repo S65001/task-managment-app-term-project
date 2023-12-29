@@ -1,0 +1,43 @@
+<section class="container">
+    <form [formGroup]="newTeamForm">
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label for="teamName" class="form-label">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="teamName" required>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="teamLeader" class="form-label">Team Leader</label>
+                <input formControlName="teamLeader" type="email" class="form-control" id="teamLeader" required>
+            </div>
+            <div class="mb-3 col-12">
+                <label for="teamDescription" class="form-label">Description</label>
+                <textarea formControlName="description" type="text" class="form-control" id="teamDescription" required></textarea>
+          
+            </div>
+       
+
+            <div class="mb-3 col-6">
+                <label for="teamMember" class="form-label">Member</label>
+                <input formControlName="newMember" type="email" class="form-control" id="teamMember" required>
+              </div>
+              
+              <div class="col-6" style="margin-top: 30px;">
+                <button [disabled]="! newTeamForm.valid" class="btn btn-sm btn-primary" (click)="addMember()">Add Member</button>
+              </div>
+           
+
+
+
+       
+
+
+          
+          
+        
+        </div>
+        <div class="sub" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary" (click)="createTeam()"
+                [disabled]="newTeamForm.invalid">Submit</button>
+        </div>
+    </form>
+</section>

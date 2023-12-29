@@ -1,0 +1,295 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    margin: 0;
+}
+
+$mainBackgroundColor: #142b22;
+$secondBackgroundColor: #2b5144;
+$thirdBackgroundColor: #c55071;
+$mainColor: #c73f65;
+// $mainColor: #c73f65;
+// $mainColor: #8ecccc;
+
+section {
+    width: 100%;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.sub {
+    margin: auto;
+    text-align: center;
+}
+
+.sub button {
+    color: white;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    background-color: $mainColor;
+    border: none;
+    box-shadow: 0px 0px 3px rgb(67, 67, 67);
+}
+
+.sub button:hover {
+    cursor: pointer;
+}
+
+.sub button:not([disabled]):hover {
+    color: white;
+    box-shadow: 0 0 15px $thirdBackgroundColor;
+}
+
+.sub button[disabled] {
+    opacity: 0.5;
+}
+
+.sub button:not([disabled]) a {
+    color: black;
+}
+
+.sub button:not([disabled]):hover a {
+    color: white;
+}
+
+.active {
+    color: #ebf000;
+}
+
+a.active {
+    color: #ebf000;
+}
+
+.g1,
+.g2,
+.g3 {
+    display: grid;
+    padding: 10px;
+}
+
+.g1 {
+    grid-template-columns: 1fr;
+}
+
+.g2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.g3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.g2,
+.g3 {
+    column-gap: 20px;
+    row-gap: 50px;
+}
+
+.g4321,
+.g321 {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 50px;
+    padding: 10px;
+}
+
+.g4321 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.g321 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.g4321,
+.g321,
+.g3,
+.g2,
+.g1 {
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1199px) {
+    .sub button {
+        padding: 9px 14px;
+        font-size: 20px;
+    }
+    .g4321 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .g321 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 991px) {
+    .sub button {
+        padding: 15px 20px;
+        font-size: 30px;
+    }
+    .g4321 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub button {
+        padding: 10px 15px;
+        font-size: 25px;
+    }
+    .g4321 {
+        grid-template-columns: 1fr;
+    }
+    .g321 {
+        grid-template-columns: 1fr;
+    }
+    .g4321,
+    .g321,
+    .g2,
+    .g3 {
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub button {
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+}
+
+.m-1 {
+    margin: 10px;
+}
+
+.m-2 {
+    margin: 20px;
+}
+
+.m-3 {
+    margin: 30px;
+}
+
+.m-4 {
+    margin: 40px;
+}
+
+.m-5 {
+    margin: 50px;
+}
+
+.mtb-1 {
+    margin: 10px 0;
+}
+
+.mtb-2 {
+    margin: 20px 0;
+}
+
+.mtb-3 {
+    margin: 30px 0;
+}
+
+.mtb-4 {
+    margin: 40px 0;
+}
+
+.mtb-5 {
+    margin: 50px 0;
+}
+
+.mlr-1 {
+    margin: 0 10px;
+}
+
+.mlr-2 {
+    margin: 0 20px;
+}
+
+.mlr-3 {
+    margin: 0 30px;
+}
+
+.mlr-4 {
+    margin: 0 40px;
+}
+
+.mlr-5 {
+    margin: 0 50px;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+.p-2 {
+    padding: 20px;
+}
+
+.p-3 {
+    padding: 30px;
+}
+
+.p-4 {
+    padding: 40px;
+}
+
+.p-5 {
+    padding: 50px;
+}
+
+.ptb-1 {
+    padding: 10px 0;
+}
+
+.ptb-2 {
+    padding: 20px 0;
+}
+
+.ptb-3 {
+    padding: 30px 0;
+}
+
+.ptb-4 {
+    padding: 40px 0;
+}
+
+.ptb-5 {
+    padding: 50px 0;
+}
+
+.plr-1 {
+    padding: 0 10px;
+}
+
+.plr-2 {
+    padding: 0 20px;
+}
+
+.plr-3 {
+    padding: 0 30px;
+}
+
+.plr-4 {
+    padding: 0 40px;
+}
+
+.plr-5 {
+    padding: 0 50px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

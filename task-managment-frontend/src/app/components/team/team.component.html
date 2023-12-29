@@ -1,0 +1,116 @@
+<section class="p-3">
+    <div class="row">
+        <div class="col-5">
+          <h1>  Name : {{teamData?.name}}</h1>
+        </div>
+        <div class="col-5">
+           <h1> leader : {{teamData?.teamLeader?.firstname}} {{teamData?.teamLeader?.lastname}}</h1>
+        </div>
+        <div class  = "col-2">
+        <button style="width: 50%;" class="btn btn-sm btn-primary"  (click)="openAddTask()">
+            Add Task
+        </button>
+    </div>
+    </div>
+    <div class="mt-5 row">
+        <div class="col-2">
+        <h2>Description:</h2>
+    </div>
+    <div class="mt-2 mb-3 col-10">
+        <p   >
+            {{teamData?.description}} 
+        </p>
+    </div>
+    <!-- <div style="width: 100%;">
+        <div class="dropdown" style="width: 100%;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" [class.show]="show" (click)="toggleShow()" style="width: 100%;">
+                members
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" [class.show]="show" style="width: 100%;">
+                <li *ngFor="let member of teamData?.members" style="height: 100px;" style="width: 100%;">
+                    {{member?.firstname}} {{member?.lastname}}
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <!-- <div class="col-4">
+            <div style="width: 100%; margin-top: 20px;">
+                <div class="dropdown" style="width: 100%;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" [class.show]="show" (click)="toggleShow()" style="width: 100%;">
+                        members
+                    </button>
+                    <ul *ngIf="show" style="width: 100%;">
+                        <li *ngFor="let member of teamData?.members" style="height: 100px;" style="width: 100%;">
+                            {{member?.firstname}} {{member?.lastname}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-6">
+            <section>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center">Members</h2>
+                        <table  class="table">
+                            <tbody>
+                                
+                                    <tr style="line-height:40px;"  *ngFor="let member of teamData?.members;index as i">
+                                        <td>{{member?.firstname + " " + member?.lastname}}</td>
+                                        <td>{{member?.role}}</td>
+                                      
+                                    </tr>
+
+                                
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="col-6">
+            <section>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center">Tasks</h2>
+                        <table class="table">
+                            <tbody>
+                                <tr style="line-height:40px;" *ngFor="let task of teamData?.teamTasks;index as i">
+                                    <td>{{task?.title}}</td>
+                                    <td>{{task?.endDate|date}}</td>
+                                    <td>
+                                        <button mat-icon-button color="primary" (click)="openTask(task?.taskId)">
+                                            <mat-icon >visibility</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- <div style="width: 100%; margin-top: 20px;">
+        <div class="dropdown" style="width: 100%;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" [class.show]="show" (click)="toggleShow()" style="width: 100%;">
+                members
+            </button>
+            <ul *ngIf="show" style="width: 100%;">
+                <li *ngFor="let member of teamData?.members" style="height: 100px;" style="width: 100%;">
+                    {{member?.firstname}} {{member?.lastname}}
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    </div>
+</section>

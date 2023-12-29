@@ -1,0 +1,23 @@
+<section>
+    <ul>
+        <li>
+          
+            <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                Home
+            </a>
+            <a routerLink="/add-task" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                Add Task
+            </a>
+            <a routerLink="/tasks-list" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                Tasks List
+            </a>
+
+            <a *ngIf="this.ROLE == 'ADMIN'" routerLink="/add-team" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                Add Team
+            </a>
+            <a *ngIf="this.ROLE == 'ADMIN'" routerLink="/teams" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+                Teams
+            </a>
+        </li>
+    </ul>
+</section>

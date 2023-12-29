@@ -1,0 +1,57 @@
+<section class="p-3">
+    <div class="row">
+        <h2 class="col-3">Title : {{taskData?.title}}</h2>
+        <h2 class="col-3">Status : {{taskData?.status}}</h2>
+        <h2 class="col-3">Priority : {{taskData?.priority}}</h2>
+        <h2 class="col-3">Deadline : {{taskData?.endDate|date}}</h2>
+    </div>
+    <div class="mt-5 row">
+        <div class="col-2">
+        <h2>Description:</h2>
+    </div>
+    <div class="mt-2 col-10">
+        <p   >
+            {{taskData?.description}}
+        </p>
+    </div>
+       
+    </div>
+    <div class="row">
+    <div class="col-2">
+    <h2>comments:</h2>
+    </div>
+    <div class="col-8">
+        <input type="text" class="input-group-text" style="width: 100%;" [(ngModel)] = "newComment">
+    </div>
+    
+    <div class  = "col-2">
+        <button [disabled] = "newComment.length===0" style="width: 50%;" class="btn btn-sm btn-primary" (click)="addComment()" >
+            comment
+        </button>
+    </div>
+
+</div>
+    <div *ngFor="let comment of taskData?.comments" >
+        <div class=" card">
+            <div class="row p-3 card-body">
+                <div class="col-3">{{comment?.owner?.firstname+ ' '+comment?.owner?.lastname}}</div>
+                <div class="col-2">{{comment?.issuedDate|date}}</div>
+                <div class="col-12 mt-2">{{comment?.content}}</div>
+
+                <div class ="row m-3 mb-2" *ngFor = "let reply of comment.replies">     
+                <div class="col-2">{{reply?.owner?.firstname+ ' '+reply?.owner?.lastname}}</div>
+                <div class="col-2">{{reply?.issuedDate|date}}</div>
+                <p class="col-8 ">{{reply?.content}}</p>
+
+                </div>
+                
+            </div>
+
+          </div>
+        <!-- <div class="row p-3">
+            <div class="col-6">{{comment?.owner?.firstname+ ' '+comment?.owner?.lastname}}</div>
+            <div class="col-6">{{comment?.issuedDate|date}}</div>
+            <div class="col-12 mt-2">{{comment?.content}}</div>
+        </div> -->
+    </div>
+</section>

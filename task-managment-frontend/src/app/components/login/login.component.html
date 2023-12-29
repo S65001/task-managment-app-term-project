@@ -1,0 +1,35 @@
+<section>
+    <div class="content">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="front">
+                <div>
+                    <h1>Login</h1>
+                </div>
+            </div>
+            <mat-grid-list [cols]="totalCols" rowHeight="100px">
+
+                <mat-grid-tile [colspan]="totalCols">
+                    <mat-form-field appearance="fill" class="custom-mat-form-field-wrapper">
+                        <mat-label>email</mat-label>
+                        <input matInput type="email" name="email" #email="ngModel" ngModel required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="totalCols">
+                    <mat-form-field>
+                        <mat-label>Password 6 Character</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" name="password" #password="ngModel" ngModel
+                            minlength="6" required>
+                        <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="font-size: 30px;">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+            <div class="sub">
+                <button type="submit" [disabled]=" f.invalid">Login</button>
+            </div>
+        </form>
+    </div>
+</section>

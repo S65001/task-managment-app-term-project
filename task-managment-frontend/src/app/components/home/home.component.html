@@ -1,0 +1,36 @@
+<section>
+    <div class="row">
+        <div class="col-6">
+            <h1 class="text-center">Tasks</h1>
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let task of tasks;index as i">
+                        <td>{{task?.title}}</td>
+                        <td>{{task?.endDate|date}}</td>
+                        <td>
+                            <button mat-icon-button color="primary" (click)="openTask(task?.taskId)">
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h1 class="text-center">Teams</h1>
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let team of teams;index as i">
+                        <td>{{team?.name}}</td>
+                        <td>{{team?.teamLeader.firstname}} {{team?.teamLeader.lastname}}</td>
+                        <td>
+                            <button mat-icon-button color="primary" (click)="openTeam(team?.teamId)">
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

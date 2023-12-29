@@ -1,0 +1,14 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" (click)="toggleSidenar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}" *ngIf="!isAuth">
+        Login
+    </a>
+    <button mat-button color="warn" *ngIf="isAuth" (click)="logoutClick()" style="font-size: 20px;">
+        Logout
+    </button>
+
+</mat-toolbar>
+<span class="dividor"></span>

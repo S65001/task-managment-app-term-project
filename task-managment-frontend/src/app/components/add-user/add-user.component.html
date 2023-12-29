@@ -1,0 +1,45 @@
+<section>
+    <form [formGroup]="newTaskForm">
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label for="user" class="form-label">User Name</label>
+                <input formControlName="UserName" type="text" class="form-control" id="user" required>
+            </div>
+
+            <!-- <div class="mb-3 col-6">
+                <label for="email" class="form-label">Email</label>
+                <input formControlName="Email" type="email" class="form-control" id="email" required>
+
+            </div> -->
+
+            <div class="mb-3 col-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input formControlName="firstName" type="text" class="form-control" id="firstName" required>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input formControlName="lastName" type="text" class="form-control" id="lastName" required>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="role" class="form-label">Role</label>
+                <select formControlName="Role" class="form-select" id="role" required>
+                    <option selected value="admin">Admin</option>
+                    <option value="teamLeader">team Leader</option>
+                    <option value="member">member</option>
+                </select>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="team" class="form-label">Team</label>
+                <select formControlName="Team" class="form-select" id="team" required>
+                    <!-- <option selected>Team</option> -->
+                </select>
+            </div>
+        </div>
+        <div class="sub">
+            <button type="submit" class="btn btn-primary" (click)="createUser()"
+                [disabled]="newTaskForm.invalid">Submit</button>
+        </div>
+    </form>
+</section>

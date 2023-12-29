@@ -1,0 +1,21 @@
+ul li a.active {
+    color: #ebf000;
+}
+
+ul {
+    width: 100%;
+}
+ul li {
+    list-style-type: none;
+    padding: 20px 10px;
+}
+
+ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-style: none;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    padding: 10px 5px;
+}

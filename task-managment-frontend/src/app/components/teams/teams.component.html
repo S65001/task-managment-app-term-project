@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="mt-5 mb-3 row">
+        <h1 class="text-right col-9">Teams</h1>
+        <button class  = "col-2 btn btn-sm btn-primary" routerLink="/add-team" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+            Add NEW Team
+        </button>
+
+    </div>
+   
+ 
+<div class="col-12">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let team of teams;index as i">
+                <td>{{team?.name}}</td>
+                <td>{{team?.teamLeader.firstname}} {{team?.teamLeader.lastname}}</td>
+                <td>
+                    <button mat-icon-button color="primary" (click)="openTeam(team?.teamId)">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
