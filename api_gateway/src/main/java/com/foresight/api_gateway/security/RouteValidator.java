@@ -12,7 +12,8 @@ public class RouteValidator {
     private static final List<String> AllowedEndpoints = List.of(
             "/users/login",
             "/swagger-ui",
-            "/eureka"
+            "/eureka",
+            "/login"
     );
 
     public static boolean shouldAuthenticate(ServerHttpRequest request)

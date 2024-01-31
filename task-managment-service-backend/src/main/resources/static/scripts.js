@@ -9,7 +9,7 @@ stompClient.connect({}, function () {
     console.log('Connected to WebSocket');
     console.log('hello');
     // Subscribe to the user-specific WebSocket destination
-     let userId = 'string'; // Replace with the actual user ID
+     let userId = '1'; // Replace with the actual user ID
      stompClient.subscribe(`/user/${userId}/topic/private-notifications`, function (message) {
         // Handle incoming messages received from the subscribed destination
         console.log('Received message:', JSON.parse(message.body));

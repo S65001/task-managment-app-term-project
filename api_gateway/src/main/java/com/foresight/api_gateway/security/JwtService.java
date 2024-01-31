@@ -48,7 +48,7 @@ public class JwtService {
         String email,role;
         try{
             final Claims claims = extractAllClaims(token);
-             email =  claims.get("email",String.class);
+             email =  claims.get("sub",String.class);
              role = claims.get("role", String.class);
 
         }

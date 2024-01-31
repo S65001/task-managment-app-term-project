@@ -56,13 +56,20 @@ public class UserService {
     public void updateUser(Long id, UserUpdateRequest request){
         SystemUser oldUser = this.getUser(id);
 
-            request.setPassword(passwordEncoder.encode(request.getPassword()));
             Optional<SystemUser> userOptional=Optional.of(request).map(UserMapper::userUpdateRequestToSystemUser);
             userOptional.get().setId(id);
             userOptional.get().setEmail(oldUser.getEmail());
+            userOptional.get().setPassword(oldUser.getPassword());
+            userOptional.get().setEnabled(oldUser.isEnabled());
             userRepo.save(userOptional.get());
 
 
+    }
+    public void updatePassword(Long id,String oldPassword,String newPassword){
+        SystemUser user=this.getUser(id);
+        if(passwordEncoder.matches(oldPassword, user.getPassword()))
+            user.setPassword(passwordEncoder.encode(newPassword));
+        userRepo.save(user);
     }
     public UserDto getUserByEmail(String email)
     {
